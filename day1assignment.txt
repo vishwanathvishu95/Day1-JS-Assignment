@@ -1,0 +1,267 @@
+1Q.Explore and explain the various methods in console function
+Explain them
+Ex. console.log()
+console.warn().
+etc...
+
+A.The console object provides access to the browser's debugging console. The specifics of how it works varies from browser 
+to browser, but there is a de facto set of features that are typically provided.The console object can be accessed from any 
+global object. Window on browsing scopes and WorkerGlobalScope as specific variants in workers via the property console. 
+It's exposed as Window.console, and can be referenced as simply console. For example:
+
+			console.log("Failed to open the specified link")
+
+
+Methods:
+
+console.assert()
+Log a message and stack trace to console if the first argument is false.
+
+console.clear()
+Clear the console.
+
+console.count()
+Log the number of times this line has been called with the given label.
+
+console.countReset()
+Resets the value of the counter with the given label.
+
+console.debug()
+Outputs a message to the console with the log level "debug".
+
+console.dir()
+Displays an interactive listing of the properties of a specified JavaScript object. This listing lets you use disclosure triangles to examine the contents of child objects.
+
+console.dirxml()
+Displays an XML/HTML Element representation of the specified object if possible or the JavaScript Object view if it is not possible.
+
+console.error()
+Outputs an error message. You may use string substitution and additional arguments with this method.
+
+console.exception()  
+An alias for error().
+
+console.group()
+Creates a new inline group, indenting all following output by another level. To move back out a level, call groupEnd().
+
+console.groupCollapsed()
+Creates a new inline group, indenting all following output by another level. However, unlike group() this starts with the inline group collapsed requiring the use of a disclosure button to expand it. To move back out a level, call groupEnd().
+
+console.groupEnd()
+Exits the current inline group.
+
+console.info()
+Informative logging of information. You may use string substitution and additional arguments with this method.
+
+console.log()
+For general output of logging information. You may use string substitution and additional arguments with this method.
+
+console.profile() 
+Starts the browser's built-in profiler (for example, the Firefox performance tool). You can specify an optional name for the profile.
+
+console.profileEnd() 
+Stops the profiler. You can see the resulting profile in the browser's performance tool (for example, the Firefox performance tool).
+
+console.table()
+Displays tabular data as a table.
+
+console.time()
+Starts a timer with a name specified as an input parameter. Up to 10,000 simultaneous timers can run on a given page.
+
+console.timeEnd()
+Stops the specified timer and logs the elapsed time in seconds since it started.
+
+console.timeLog()
+Logs the value of the specified timer to the console.
+
+console.timeStamp() 
+Adds a marker to the browser's Timeline or Waterfall tool.
+
+console.trace()
+Outputs a stack trace.
+
+console.warn()
+Outputs a warning message. You may use string substitution and additional arguments with this method.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2Q.Write the difference between var, let and const with code examples.
+
+1.Var:
+
+The JavaScript variables statement is used to declare a variable and, optionally, we can initialize the value of that variable.
+
+Example: var a =10;
+
+Variable declarations are processed before the execution of the code.
+The scope of a JavaScript variable declared with var is its current execution context.
+The scope of a JavaScript variable declared outside the function is global.
+Consider the following code snippet.
+ 
+Ex:
+
+function nodeSimplified(){
+  var a =10;
+  console.log(a);  // output 10
+  if(true){
+   var a=20;
+   console.log(a); // output 20
+  }
+  console.log(a);  // output 20
+}
+In the above code, you can find, when the variable is updated inside the if loop, that the value of variable "a" updated 20 globally, hence outside the if loop the value persists. It is similar to the Global variable present in other languages. But, be sure to use this functionality with great care because there is the possibility of overriding an existing value.
+
+2.let:
+
+The let statement declares a local variable in a block scope. It is similar to var, in that we can optionally initialize the variable.
+
+Example: let a =10;
+
+The let statement allows you to create a variable with the scope limited to the block on which it is used.
+It is similar to the variable we declare in other languages like Java, .NET, etc.
+Consider the following code snippet.
+
+Ex:
+
+function nodeSimplified(){
+  let a =10;
+  console.log(a);  // output 10
+  if(true){
+   let a=20;
+   console.log(a); // output 20
+  }
+  console.log(a);  // output 10
+}
+It is almost the same behavior we see in most language.
+
+function nodeSimplified(){
+  let a =10;
+  let a =20; //throws syntax error
+  console.log(a); 
+}
+Error Message: Uncaught SyntaxError: Identifier 'a' has already been declared.
+
+However, with var, it works fine.
+
+function nodeSimplified(){ 
+  var a =10;   
+  var a =20;   
+  console.log(a);  //output 20 
+}
+The scope will be well maintained with a let statement and when using an inner function the let statement makes your code clean and clear.
+
+I hope the above examples will help you better understand the var and let commands and if you have any queries please write me in the comment section.
+
+3. const:
+
+const statement values can be assigned once and they cannot be reassigned. The scope of const statement works similar to let statements.
+
+Example: const a =10;
+
+Ex:
+function nodeSimplified(){
+  const MY_VARIABLE =10;
+  console.log(MY_VARIABLE);  //output 10 
+}
+
+As per usual, naming standards dictated that we declare the const variable in capital letters. const a =10 will work the same way as the code given above. 
+Naming standards should be followed to maintain the code for the long run.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3Q. Write a brief intro on available data types in Javascript.
+
+A. JavaScript Data Types
+In this tutorial you will learn about the data types available in JavaScript.
+
+Data Types in JavaScript:-
+
+Data types basically specify what kind of data can be stored and manipulated within a program.
+
+There are six basic data types in JavaScript which can be divided into three main categories: primitive (or primary), composite (or reference), 
+and special data types. String, Number, and Boolean are primitive data types. Object, Array, and Function (which are all types of objects) are composite
+ data types. Whereas Undefined and Null are special data types.
+Primitive data types can hold only one value at a time, whereas composite data types can hold collections of values and more complex entities.
+Let's discuss each one of them in detail.
+
+a.The String Data Type:
+
+The string data type is used to represent textual data (i.e. sequences of characters). Strings are created using single or double quotes surrounding one or more characters, as shown below:
+
+Example:
+var a = 'Hi there!';  // using single quotes
+var b = "Hi there!";  // using double quotes
+You can include quotes inside the string as long as they don't match the enclosing quotes.
+
+
+
+b.The Number Data Type:
+The number data type is used to represent positive or negative numbers with or without decimal place, or numbers written using exponential notation e.g. 1.5e-4 (equivalent to 1.5x10-4).
+
+Example:
+var a = 25;         // integer
+var b = 80.5;       // floating-point number
+var c = 4.25e+6;    // exponential notation, same as 4.25e6 or 4250000
+var d = 4.25e-6;    // exponential notation, same as 0.00000425
+The Number data type also includes some special values which are: Infinity, -Infinity and NaN. Infinity represents the mathematical Infinity ∞, which is greater than any number. Infinity is the result of dividing a nonzero number by 0, as demonstrated below:
+
+
+c.The Boolean Data Type:
+The Boolean data type can hold only two values: true or false. It is typically used to store values like yes (true) or no (false), on (true) or off (false), etc. as demonstrated below:
+
+Example:
+var isReading = true;   // yes, I'm reading
+var isSleeping = false; // no, I'm not sleeping
+Boolean values also come as a result of comparisons in a program. The following example compares two variables and shows the result in an alert dialog box:
+
+d.The Undefined Data Type:
+The undefined data type can only have one value-the special value undefined. If a variable has been declared, but has not been assigned a value, has the value undefined.
+
+Example:
+var a;
+var b = "Hello World!"
+ 
+
+e.The Null Data Type:
+This is another special data type that can have only one value-the null value. A null value means that there is no value. It is not equivalent to an empty string ("") or 0, it is simply nothing.
+
+A variable can be explicitly emptied of its current contents by assigning it the null value.
+
+Example:
+var a = null;
+alert(a); // Output: null
+ 
+var b = "Hello World!"
+alert(b); // Output: Hello World!
+ 
+b = null;
+
+f. The Object Data Type:
+The object is a complex data type that allows you to store collections of data.
+
+An object contains properties, defined as a key-value pair. A property key (name) is always a string, but the value can be any data type, like strings, numbers, booleans, or complex data types like arrays, function and other objects. You'll learn more about objects in upcoming chapters.
+
+The following example will show you the simplest way to create an object in JavaScript.
+
+Example:
+var emptyObject = {};
+var person = {"name": "Clark", "surname": "Kent", "age": "36"};
+ 
+
+g. The Array Data Type:
+An array is a type of object used for storing multiple values in single variable. Each value (also called an element) in an array has a numeric position, known as its index, and it may contain data of any data type-numbers, strings, booleans, functions, objects, and even other arrays. The array index starts from 0, so that the first array element is arr[0] not arr[1].
+
+The simplest way to create an array is by specifying the array elements as a comma-separated list enclosed by square brackets, as shown in the example below:
+
+Example:
+var colors = ["Red", "Yellow", "Green", "Orange"];
+var cities = ["London", "Paris", "New York"];
+ 
+h. The Function Data Type:
+The function is callable object that executes a block of code. Since functions are objects, so it is possible to assign them to variables, as shown in the example below:
+
+Example:
+var greeting = function(){ 
+    return "Hello World!"; 
+}
+ 
